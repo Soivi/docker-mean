@@ -3,7 +3,12 @@ mongodb:
   volumes:
     - ./mongodb/volumes/var/lib/mongodb:/var/lib/mongodb
   restart: always
+
 nodejs:
-  build: ./nodejs
+  image: node:latest
   ports:
-    - 8080:8080
+    - "8080:8080"
+  volumes:
+    - ./nodejs:/usr/src/app
+  working_dir: /usr/src/app
+  command: bash -c "npm install && npm start"
