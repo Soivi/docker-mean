@@ -1,0 +1,5 @@
+mongodb:
+  image: mongo:latest
+  volumes:
+    - ./mongodb/volumes/var/lib/mongodb:/var/lib/mongodb
+  restart: always
