@@ -3,3 +3,7 @@ mongodb:
   volumes:
     - ./mongodb/volumes/var/lib/mongodb:/var/lib/mongodb
   restart: always
+nodejs:
+  build: ./nodejs
+  ports:
+    - 8080:8080
